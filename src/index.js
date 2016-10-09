@@ -1,6 +1,6 @@
-var $ = require('jQuery');
-require('../node_modules/bootstrap/dist/js/bootstrap.min.js');
+var $ = jQuery = require('jQuery');
+var bootstrap = require('bootstrap');
 
 $(function() {
-	alert('hola mundo de picaros')
+	// alert('hola mundo de picaros')
 })
