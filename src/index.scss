@@ -6,11 +6,21 @@ $colorGrayDark: rgb(63,63,63);
 $colorGrayLight: #f0eded;
 $colorGrayText: #989595;
 
-$headerHeight: 80px;
+$headerHeight: 60px;
 $carouselHeight: 80vh;
 
+// UTILITIES
 .u-right {
 	text-align: right;
+}
+.u-relative {
+	position: relative;
+}
+.mobile-only {
+	display: none;
+}
+.desktop-only {
+	display: block;
 }
 
 body {
@@ -18,6 +28,8 @@ body {
 	background: $colorWhite;
 }
 
+
+// HEADER
 .header {
 	height: $headerHeight;
 	line-height: $headerHeight;
@@ -36,14 +48,17 @@ body {
 		line-height: initial;
 		position: absolute;
 		right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
+		top: 50%;
+		transform: translate(0, -50%);
+		-webkit-transform: translate(0, -50%);
 
-		ul {
+		> ul {
 			list-style: none;
 			margin: 0;
 			li {
+				&:nth-child(1) {
+					border: none;
+				}
 				cursor: pointer;
 				display: inline-block;
 				border-left: 1px solid $colorOrangeLight;
@@ -55,15 +70,31 @@ body {
 		}
 		&-1, &-2, &-3 {
 			display: none;
+			// display: inline-block;
+			width: 115px;
+			background-color: $colorGrayLight;
+			position: relative;
+			left: 40px;
 			ul {
+				padding: 0;
 				li {
 					display: block;
+					padding: 8px;
+					border-bottom: 1px solid $colorOrangeLight;
 				}
 			}
 		}
 	}
+	&-menu-xs {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 1.6em;
+		cursor: pointer;
+	}
 }
 
+// CAROUSEL BOOTSTRAP
 .carousel {
 	&-inner {
 		max-height: $carouselHeight;
@@ -91,6 +122,7 @@ body {
 	}
 }
 
+// SECTION ONE
 .sectionOne {
 	padding-top: 50px;
 		&-title {
@@ -115,6 +147,7 @@ body {
 		}
 }
 
+// SECTION TWO
 .sectionTwo {
 	padding: 30px 0;
 	background-color: $colorGrayLight;
@@ -139,6 +172,7 @@ body {
 	}
 }
 
+// FOOTER
 .footer {
 	background-color: $colorGrayDark;
 	padding: 60px 0;
@@ -187,6 +221,7 @@ body {
 }
 
 
+// MEDIA QUERIES
 @media screen and (max-width: 767px) {
 	.sectionOne {
 		img {
@@ -210,8 +245,13 @@ body {
 	}
 }
 
-
 @media screen and (max-width: 600px) {
+	.mobile-only {
+		display: block;
+	}
+	.desktop-only {
+		display: none;
+	}
 	.carousel {
 		font-size: 10px;
 		&-caption {
