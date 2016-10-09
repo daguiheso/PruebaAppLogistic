@@ -2,10 +2,185 @@ $colorWhite: #ffffff;
 $colorBlack: #000000;
 $colorOrangeDark: rgb(228,82,31);
 $colorOrangeLight: rgb(225,66,34);
-$colorGrayDark: rgb(228,238,238);
-$colorGrayLight: rgb(63,63,63);
+$colorGrayDark: rgb(63,63,63);
+$colorGrayLight: #f0eded;
+$colorGrayText: #989595;
+
+$headerHeight: 80px;
+$carouselHeight: 80vh;
+
+.u-right {
+	text-align: right;
+}
+
+.u-offPadding {
+	padding: 0;
+}
 
 body {
 	font-size: 16px;
 	background: $colorWhite;
+}
+
+.header {
+	height: $headerHeight;
+	line-height: $headerHeight;
+	position: relative;
+	&-name {
+		font-size: 1.38em;
+		color: gray;
+		display: inline-block;
+		span {
+			color: $colorGrayDark;
+			font-weight: 600;
+		}
+	}
+	&-menu-lg {
+		font-size: 0.88em;
+		line-height: initial;
+		position: absolute;
+		right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+
+		ul {
+			list-style: none;
+			margin: 0;
+			li {
+				cursor: pointer;
+				display: inline-block;
+				border-left: 1px solid $colorOrangeLight;
+				padding: 3px 24px;
+				i {
+					margin-left: 7px;
+				}
+			}
+		}
+		&-1, &-2, &-3 {
+			display: none;
+			ul {
+				li {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.carousel {
+	&-inner {
+		max-height: $carouselHeight;
+	}
+	&-caption {
+		top: 16%;
+		left: 10%;
+		right: 10%;
+	}
+	&-titleOne {
+		color: $colorWhite;
+		font-size: 2.4em;
+		line-height: 12px;
+	}
+	&-titleTwo {
+		color: $colorOrangeLight;
+		font-size: 2.4em;
+		text-transform: uppercase;
+	}
+	&-indicators {
+		li {
+			background-color: $colorOrangeLight;
+			border: none;
+		}
+	}
+}
+
+.sectionOne {
+	padding-top: 50px;
+		&-title {
+			color: $colorOrangeLight;
+			font-size: 1.38em;
+			font-weight: 500;
+			margin: 30px 0 6px;
+		}
+		&-subtitle {
+			font-size: 1.25em;;
+			font-weight: 600;
+			margin: 0 0 22px;
+		}
+		&-text {
+			color: $colorGrayText;
+			width: 94%;
+		}
+		img {
+			width: 100%;
+			max-width: 250px;
+		}
+}
+
+.sectionTwo {
+	padding: 30px 0;
+	background-color: $colorGrayLight;
+	&-title {
+		color: $colorOrangeLight;
+		font-size: 1.25em;;
+		font-weight: 500;
+		margin: 0 0 6px;
+	}
+	&-subtitle {
+		font-size: 1.38em;
+		font-weight: 600;
+		margin: 0 0;
+	}
+	button {
+		height: 40px;
+		width: 196px;
+		background: linear-gradient(rgb(228,96,31), $colorOrangeLight);
+		border: none;
+		border-radius: 8px;
+		color: $colorWhite;
+	}
+}
+
+.footer {
+	background-color: $colorGrayDark;
+	padding: 60px 0;
+	font-size: 0.81em;
+	color: $colorWhite;
+	a {
+		color: $colorWhite;
+		text-decoration: none;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 15px;
+		li {
+			display: inline-block;
+			background-color: $colorWhite;
+			border-radius: 100%;
+			height: 30px;
+			width: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin-right: 10px;
+			i {
+				color: $colorGrayDark;
+			}
+		}
+	}
+	&-name {
+		font-size: 1.7em;
+		color: gray;
+		text-align: right;
+		margin-bottom: 11px;
+		span {
+			color: $colorWhite;
+			font-weight: 600;
+		}
+	}
+	&-text {
+		text-align: right;
+		margin-bottom: 20px;
+	}
 }
