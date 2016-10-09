@@ -13,10 +13,6 @@ $carouselHeight: 80vh;
 	text-align: right;
 }
 
-.u-offPadding {
-	padding: 0;
-}
-
 body {
 	font-size: 16px;
 	background: $colorWhite;
@@ -115,6 +111,7 @@ body {
 		img {
 			width: 100%;
 			max-width: 250px;
+			text-align: right;
 		}
 }
 
@@ -182,5 +179,67 @@ body {
 	&-text {
 		text-align: right;
 		margin-bottom: 20px;
+	}
+	&-link {
+		text-align: right;
+		padding: 0;
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	.sectionOne {
+		img {
+			text-align: center;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+	.footer {
+		text-align: center;
+		&-name {
+			text-align: center;
+			margin-top: 40px;
+		}
+		&-text {
+			text-align: center;
+		}
+		&-link {
+			text-align: center;
+		}
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	.carousel {
+		font-size: 10px;
+		&-caption {
+			top: 8%;
+			left: 4%;
+			right: 4%;
+		}
+	}
+	.sectionOne {
+		padding-top: 20px;
+	}
+	.sectionTwo button {
+		height: 30px;
+		width: 130px;
+	}
+
+}
+
+@media screen and (max-width: 460px) {
+	body {
+		font-size: 14px;
+	}
+	.carousel {
+		font-size: 7px;
+		&-caption {
+			top: 1%;
+			left: 1%;
+			right: 1%;
+		}
 	}
 }
